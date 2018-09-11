@@ -10,5 +10,7 @@ import Foundation
 
 struct ARModel: Codable {
     let id: Int
-    let name: String
+    let text: String
+    let lattitude: Double
+    let longitude: Double
 }
