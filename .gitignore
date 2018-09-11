@@ -1,3 +1,4 @@
+Package.resolved
 .DS_Store
 /.build
 /.build-ubuntu
@@ -5,3 +6,4 @@
 /config.json
 /spec.json
 ./config/localdev-config.json
+ShareIt-Backend.xcodeproj/
