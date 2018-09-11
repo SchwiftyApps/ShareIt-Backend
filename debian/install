@@ -1,0 +1,3 @@
+.build/							usr/src/ShareIt-Backend
+terraform/scripts/install.sh	usr/src/ShareIt-Backend
+terraform/scripts/start.sh		usr/src/ShareIt-Backend
