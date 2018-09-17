@@ -14,6 +14,10 @@ func initializeRestRoutes(app: App) {
     
     app.router.get("/sample", handler: getHandler)
     
+    app.router.get("/sample", handler: getAllHandler)
+    
+    app.router.delete("/sample", handler: deleteAllHandler)
+    
 }
 
 //Create a temp datastore for testing
@@ -32,3 +36,12 @@ func getHandler(id: String, completion: (ARModel?, RequestError?) -> Void) {
     completion(result, nil)
 }
 
+func getAllHandler(completion: ([ARModel]?, RequestError?) -> Void) {
+    let result = modelStore.map { $1 }
+    completion(result, nil)
+}
+
+func deleteAllHandler(completion: (RequestError?) -> Void) {
+    modelStore = [:]
+    completion(nil)
+}
