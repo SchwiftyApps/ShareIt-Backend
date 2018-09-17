@@ -7,6 +7,7 @@ import KituraContracts
 import Health
 import KituraOpenAPI
 
+
 public let projectPath = ConfigurationManager.BasePath.project.path
 public let health = Health()
 

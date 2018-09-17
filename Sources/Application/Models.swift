@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftKueryORM
 
 
-struct ARModel: Codable {
+struct ARModel: Model {
     let id: String
     let text: String
     let lattitude: Double
