@@ -14,6 +14,8 @@ func initializeRestRoutes(app: App) {
     
     app.router.get("/sample", handler: getHandler)
     
+    app.router.delete("/sample", handler: deleteHandler)
+    
     app.router.get("/sample", handler: getAllHandler)
     
     app.router.delete("/sample", handler: deleteAllHandler)
@@ -34,6 +36,15 @@ func getHandler(id: String, completion: (ARModel?, RequestError?) -> Void) {
         return
     }
     completion(result, nil)
+}
+
+func deleteHandler(id: String, completion: (RequestError?) -> Void) {
+    guard let _ = modelStore[id] else {
+        completion(.notFound)
+        return
+    }
+    modelStore[id] = nil
+    completion(nil)
 }
 
 func getAllHandler(completion: ([ARModel]?, RequestError?) -> Void) {
